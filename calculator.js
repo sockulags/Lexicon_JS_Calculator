@@ -1,6 +1,6 @@
 let isNewCalculation = true;
 let firstNumber = 0;
-let secoundNumber = 0;
+let secondNumber = 0;
 let result = 0;
 let operation = "";
 const currInput = document.getElementById("box");
@@ -18,7 +18,7 @@ function appendText(text) {
       currInput.value += text;
     }
   }
-  secoundNumber = parseFloat(currInput.value);
+  secondNumber = parseFloat(currInput.value);
 }
 
 function addOperation(operator) {
@@ -28,41 +28,77 @@ function addOperation(operator) {
 }
 
 function calculateResult() {
-  if (operation.length > 0) {
+  if (
+    operation.length > 0 &&
+    (currInput.value != "" ||
+      operation === "sqRoot" ||
+      operation === "factorial")
+  ) {
     switch (operation) {
       case "divide":
-        result = firstNumber / secoundNumber;
+        result = firstNumber / secondNumber;
         break;
       case "multiply":
-        result = firstNumber * secoundNumber;
+        result = firstNumber * secondNumber;
         break;
       case "subtract":
-        result = firstNumber - secoundNumber;
+        result = firstNumber - secondNumber;
         break;
       case "addition":
-        result = firstNumber + secoundNumber;
+        result = firstNumber + secondNumber;
+        break;
+      case "modulus":
+        result = firstNumber % secondNumber;
+        break;
+      case "sqRoot":
+        result = Math.sqrt(firstNumber);
+        break;
+      case "factorial":
+        result = factorial(firstNumber);
+        break;
+      case "power":
+        result = firstNumber ** secondNumber;
         break;
     }
 
     addToHistory();
 
     firstNumber = 0;
-    secoundNumber = 0;
+    secondNumber = 0;
     operation = "";
     isNewCalculation = true;
     currInput.value = result.toString();
   }
+  else{
+    currInput.value = "Invalid input"
+  }
+}
+
+function factorial(num) {
+  if (num == 1) return num;
+  else return num * factorial(num - 1);
 }
 
 function addToHistory() {
   const newCalulcation = document.createElement("p");
-  newCalulcation.textContent = `${firstNumber} ${getOperationSign(
-    operation
-  )} ${secoundNumber} = ${result}`;
+  newCalulcation.innerHTML = historyText();
+
   const target = document.querySelector(".previousCalulations");
   target.appendChild(newCalulcation);
+
   const history = document.getElementById("history");
   history.style.display = "block";
+}
+
+function prependSign(){
+    let currentText = currInput.value;
+    if(currentText[0] != "-"){
+        currentText = "-" + currentText;
+        
+    } else{
+        currentText = currentText.substring(1);
+    }
+    currInput.value = currentText;
 }
 
 function getOperationSign(operation) {
@@ -70,5 +106,35 @@ function getOperationSign(operation) {
   else if (operation === "multiply") return "x";
   else if (operation === "subtract") return "-";
   else if (operation === "addition") return "+";
+  else if (operation === "modulus") return "%";
   else return "";
+}
+
+function historyText(){
+    if(operation === "sqRoot"){
+        return `√${firstNumber} = ${result}`
+      }
+      else if(operation === "factorial"){
+return `!${firstNumber} = ${result}`
+      }
+      else if(operation === "power"){    
+        return `${firstNumber}<sup>${secondNumber}</sup> = ${result}`
+      }
+      else{
+        return `${firstNumber} ${getOperationSign(operation)} 
+        ${secondNumber} = ${result}`
+      }
+}
+
+function getPi() {
+  return Math.PI.toFixed(10);
+}
+
+function clearEverything() {
+  isNewCalculation = true;
+  firstNumber = 0;
+  secondNumber = 0;
+  result = 0;
+  operation = "";
+  currInput.value = "";
 }

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calculator</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap"
@@ -17,22 +18,31 @@
       <label for="box">Calculator</label>
       <input class="numericInput" type="text" id="box" readonly />
 
-      <button onclick="appendText(this.innerText)" class="zero">0</button>
-      <button onclick="appendText(this.innerText)" class="one">1</button>
-      <button onclick="appendText(this.innerText)" class="two">2</button>
-      <button onclick="appendText(this.innerText)" class="three">3</button>
-      <button onclick="appendText(this.innerText)" class="four">4</button>
-      <button onclick="appendText(this.innerText)" class="five">5</button>
-      <button onclick="appendText(this.innerText)" class="six">6</button>
-      <button onclick="appendText(this.innerText)" class="seven">7</button>
-      <button onclick="appendText(this.innerText)" class="eight">8</button>
-      <button onclick="appendText(this.innerText)" class="nine">9</button>
-      <button onclick="appendText(this.innerText)" class="comma">,</button>
+      <button onclick="appendText(this.innerText)" class="numberedBtn zero">0</button>
+      <button onclick="appendText(this.innerText)" class="numberedBtn one">1</button>
+      <button onclick="appendText(this.innerText)" class="numberedBtn two">2</button>
+      <button onclick="appendText(this.innerText)" class="numberedBtn three">3</button>
+      <button onclick="appendText(this.innerText)" class="numberedBtn four">4</button>
+      <button onclick="appendText(this.innerText)" class="numberedBtn five">5</button>
+      <button onclick="appendText(this.innerText)" class="numberedBtn six">6</button>
+      <button onclick="appendText(this.innerText)" class="numberedBtn seven">7</button>
+      <button onclick="appendText(this.innerText)" class="numberedBtn eight">8</button>
+      <button onclick="appendText(this.innerText)" class="numberedBtn nine">9</button>
+      <button onclick="appendText(this.innerText)" class="numberedBtn comma">,</button>
       <button onclick="addOperation(this)" class="divide">÷</button>
       <button onclick="addOperation(this)" class="multiply">x</button>
       <button onclick="addOperation(this)" class="subtract">-</button>
       <button onclick="addOperation(this)" class="addition">+</button>
-      <button onclick="calculateResult()" class="equals">=</button>
+      <button onclick="calculateResult()" class="equals equalsBtn">=</button>
+      <button onclick="clearEverything()" class="clearEverything">CE</button>
+      <button onClick="appendText(getPi())" class="pi">π</button>
+      <button onClick="addOperation(this)" class="modulus">mod</button>
+      <button onClick="addOperation(this)" class="sqRoot">√x</button> 
+      <button onClick="addOperation(this)" class="factorial">!n</button>
+      <button onClick="addOperation(this)" class="power">x<sup>y</sup></button>
+      <button onClick="undoLatestInput()" class="undo"><span class="material-symbols-outlined">backspace</span></button>
+        <button onClick="prependSign()" class="numberedBtn plusminus">+/-</button>
+     
     </section>
     <h1 id="history">History:</h1>
     <div class="previousCalulations">
