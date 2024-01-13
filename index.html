@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <section class="frame">
+      <label for="box">Calculator</label>
+      <input class="numericInput" type="text" id="box" readonly />
+
+      <button onclick="appendText(this.innerText)" class="zero">0</button>
+      <button onclick="appendText(this.innerText)" class="one">1</button>
+      <button onclick="appendText(this.innerText)" class="two">2</button>
+      <button onclick="appendText(this.innerText)" class="three">3</button>
+      <button onclick="appendText(this.innerText)" class="four">4</button>
+      <button onclick="appendText(this.innerText)" class="five">5</button>
+      <button onclick="appendText(this.innerText)" class="six">6</button>
+      <button onclick="appendText(this.innerText)" class="seven">7</button>
+      <button onclick="appendText(this.innerText)" class="eight">8</button>
+      <button onclick="appendText(this.innerText)" class="nine">9</button>
+      <button onclick="appendText(this.innerText)" class="comma">,</button>
+      <button onclick="addOperation(this)" class="divide">÷</button>
+      <button onclick="addOperation(this)" class="multiply">x</button>
+      <button onclick="addOperation(this)" class="subtract">-</button>
+      <button onclick="addOperation(this)" class="addition">+</button>
+      <button onclick="calculateResult()" class="equals">=</button>
+    </section>
+    <h1 id="history">History:</h1>
+    <div class="previousCalulations">
+     
+    </div>
+
+    <script src="calculator.js"></script>
+  </body>
+</html>
