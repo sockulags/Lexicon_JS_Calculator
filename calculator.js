@@ -15,12 +15,11 @@ function appendText(text) {
     if (text === "," && !currentText.includes(".")) {
       currInput.value += ".";
     } else if (text !== ",") {
-        if(currentText === "0"){
-            currInput.value = text;
-        }
-        else{
-            currInput.value += text;
-        }
+      if (currentText === "0") {
+        currInput.value = text;
+      } else {
+        currInput.value += text;
+      }
     }
   }
   secondNumber = parseFloat(currInput.value);
@@ -73,10 +72,8 @@ function calculateResult() {
     operation = "";
     isNewCalculation = true;
     currInput.value = result.toString();
-  }
-  else{
-    currInput.value = "Invalid input"
-    
+  } else {
+    currInput.value = "Invalid input";
   }
 }
 
@@ -96,15 +93,14 @@ function addToHistory() {
   history.style.display = "block";
 }
 
-function prependSign(){
-    let currentText = currInput.value;
-    if(currentText[0] != "-"){
-        currentText = "-" + currentText;
-        
-    } else{
-        currentText = currentText.substring(1);
-    }
-    currInput.value = currentText;
+function prependSign() {
+  let currentText = currInput.value;
+  if (currentText[0] != "-") {
+    currentText = "-" + currentText;
+  } else {
+    currentText = currentText.substring(1);
+  }
+  currInput.value = currentText;
 }
 
 function getOperationSign(operation) {
@@ -116,20 +112,17 @@ function getOperationSign(operation) {
   else return "";
 }
 
-function historyText(){
-    if(operation === "sqRoot"){
-        return `√${firstNumber} = ${result}`
-      }
-      else if(operation === "factorial"){
-return `!${firstNumber} = ${result}`
-      }
-      else if(operation === "power"){    
-        return `${firstNumber}<sup>${secondNumber}</sup> = ${result}`
-      }
-      else{
-        return `${firstNumber} ${getOperationSign(operation)} 
-        ${secondNumber} = ${result}`
-      }
+function historyText() {
+  if (operation === "sqRoot") {
+    return `√${firstNumber} = ${result}`;
+  } else if (operation === "factorial") {
+    return `!${firstNumber} = ${result}`;
+  } else if (operation === "power") {
+    return `${firstNumber}<sup>${secondNumber}</sup> = ${result}`;
+  } else {
+    return `${firstNumber} ${getOperationSign(operation)} 
+        ${secondNumber} = ${result}`;
+  }
 }
 
 function getPi() {
@@ -143,4 +136,13 @@ function clearEverything() {
   result = 0;
   operation = "";
   currInput.value = "0";
+}
+
+function undoLatestInput() {
+  let currentText = currInput.value;
+  if (currentText.length === 1) {
+    currInput.value = "0";
+  } else if (currentText.length > 1) {
+    currInput.value = currentText.slice(0, -1);
+  }
 }
