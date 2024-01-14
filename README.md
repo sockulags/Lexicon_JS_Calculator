@@ -62,6 +62,7 @@ ___
 Picture is showing continues calculations made from the intial 5 x 5 = 25.
 
 ## TODO
+- Error handling.. The catches one or two simple scenarios, that's it. You will get "Invalid input" back though.
 - Integrate history to the calculator. A button to choose whether you want to see the history or not. And add a clear history button.
 - Greater visualization of what is going on the calculator.
 - Be able to perform longer calculation. Include option to use parentheses.
