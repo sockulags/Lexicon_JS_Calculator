@@ -7,20 +7,20 @@ Here is a visual of my current result. Or try it out, link at the bottom of this
 ![Calculator](/img/calculator.png)
 
  ## The functions currently included are
->Addition\
->Subtraction\
->Multiplication\
->Division\
->Square root\
->X powered to Y\
->Factorials\
->Modulus\
->A button for getting the value of π\
->CE for clear everything. In this case means restart the calculation\
->An arrow for undo latest input.\
->+/- to change between negative and positive number\
->Equals sign to sum it up.
-> 
+ - Addition\
+ - Subtraction\
+ - Multiplication\
+ - Division\
+ - Square root\
+ - X powered to Y\
+ - Factorials\
+ - Modulus\
+ - A button for getting the value of π\
+ - CE for clear everything. In this case means restart the calculation\
+ - An arrow for undo latest input.\
+ - +/- to change between negative and positive number\
+ - Equals sign to sum it up.
+
 
 ## How to use
 1. Enter a number
