@@ -7,19 +7,19 @@ Here is a visual of my current result. Or try it out, link at the bottom of this
 ![Calculator](/img/calculator.png)
 
  ## The functions currently included are
- - Addition\
- - Subtraction\
- - Multiplication\
- - Division\
- - Square root\
- - X powered to Y\
- - Factorials\
- - Modulus\
- - A button for getting the value of π\
- - CE for clear everything. In this case means restart the calculation\
- - An arrow for undo latest input.\
- - +/- to change between negative and positive number\
- - Equals sign to sum it up.
+ - Addition
+ - Subtraction
+ - Multiplication
+ - Division
+ - Square root
+ - X powered to Y
+ - Factorials
+ - Modulus
+ - A button for getting the value of π
+ - CE for clear everything. In this case means restart the calculation
+ - An arrow for undo latest input.
+ - +/- to change between negative and positive number
+ - Equals sign to sum it up
 
 
 ## How to use
@@ -41,7 +41,7 @@ Here is the process if you have more than two numbers.\
 2. Choose operation
 3. Enter second number
 4. Press equals sign
-5. Start over att 2. and continue, using the result.
+5. Start over at 2. and continue, using the result.
 
 
 #### Example
@@ -51,7 +51,7 @@ Here is the process if you have more than two numbers.\
 3. 6
 4. equals
 5. division
-6. 2.
+6. 2
 7. equals
 
 *<sub>Area of a triangle: base x height / 2</sub>
