@@ -2,7 +2,7 @@
 
 > Program a real, but simple calculator in JavaScript.
 
-Here is a visual of my current result. Or try it out, link at the bottom of this file.
+Here is a visual of my current result.You can try it out, link at the bottom of this file.
 
 ![Calculator](/img/calculator.png)
 
