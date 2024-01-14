@@ -15,7 +15,12 @@ function appendText(text) {
     if (text === "," && !currentText.includes(".")) {
       currInput.value += ".";
     } else if (text !== ",") {
-      currInput.value += text;
+        if(currentText === "0"){
+            currInput.value = text;
+        }
+        else{
+            currInput.value += text;
+        }
     }
   }
   secondNumber = parseFloat(currInput.value);
@@ -71,6 +76,7 @@ function calculateResult() {
   }
   else{
     currInput.value = "Invalid input"
+    
   }
 }
 
@@ -136,5 +142,5 @@ function clearEverything() {
   secondNumber = 0;
   result = 0;
   operation = "";
-  currInput.value = "";
+  currInput.value = "0";
 }
